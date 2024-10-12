@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import products from '../../Data/asyncMock';  // Importamos el mock de datos
+import products from '../../Data/asyncMock';  
 
 const ItemList = () => {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, removeFromCart }) => {
-  // Calcular el subtotal sumando los precios de los productos en el carrito
+
   const subtotal = cart.reduce((acc, product) => acc + parseFloat(product.price.replace('$', '').replace('.', '')), 0);
 
   if (cart.length === 0) {
@@ -13,7 +13,7 @@ const Cart = ({ cart, removeFromCart }) => {
     <div className="container mx-auto py-16">
       <h2 className="text-2xl font-bold mb-6">Carro de compras | ID: 4067500006</h2>
 
-      {/* Tabla de productos */}
+
       <table className="table-auto w-full text-left mb-6">
         <thead>
           <tr className="border-b">
@@ -23,7 +23,7 @@ const Cart = ({ cart, removeFromCart }) => {
             <th className="p-4">ENTREGA</th>
             <th className="p-4">DESCUENTO</th>
             <th className="p-4">TOTAL</th>
-            <th className="p-4"></th>  {/* Columna para el botón de eliminar */}
+            <th className="p-4"></th> 
           </tr>
         </thead>
         <tbody>
@@ -62,7 +62,7 @@ const Cart = ({ cart, removeFromCart }) => {
         </tbody>
       </table>
 
-      {/* Código de cupón y subtotal */}
+
       <div className="flex justify-between items-center mb-8">
         <div className="flex">
           <input
@@ -79,19 +79,19 @@ const Cart = ({ cart, removeFromCart }) => {
         </div>
       </div>
 
-      {/* Total de la orden */}
+      
       <div className="flex justify-between items-center mb-8">
         <h3 className="text-2xl font-bold">TOTAL DE LA ORDEN: ${subtotal.toLocaleString()}</h3>
         <p>Su orden incluye 19% de IVA</p>
       </div>
 
-      {/* Botones de seguir comprando y finalizar compra */}
+      
       <div className="flex justify-between">
         <Link to="/" className="bg-gray-500 text-white px-6 py-3 font-bold hover:bg-gray-700">
           SEGUIR COMPRANDO
         </Link>
 
-        {/* Link al formulario de pago */}
+        
         <Link to="/checkout" className="bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">
           FINALIZAR COMPRA
         </Link>

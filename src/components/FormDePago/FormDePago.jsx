@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const FormDePago = () => {
-  // Estado para manejar los datos del formulario
+
   const [formData, setFormData] = useState({
     nombre: '',
     apellido: '',
@@ -16,7 +16,7 @@ const FormDePago = () => {
     guardarDireccion: false,
   });
 
-  // Manejar los cambios en los inputs del formulario
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
@@ -25,7 +25,7 @@ const FormDePago = () => {
     }));
   };
 
-  // Limpiar todos los campos del formulario
+
   const handleReset = () => {
     setFormData({
       nombre: '',
@@ -42,11 +42,11 @@ const FormDePago = () => {
     });
   };
 
-  // Enviar el formulario
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Compra Realizada');
-    console.log(formData); // Aquí puedes manejar los datos, como enviarlos a un servidor
+
   };
 
   return (
@@ -55,7 +55,7 @@ const FormDePago = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4 mb-4">
-          {/* Nombre */}
+
           <label>
             NOMBRE
             <input
@@ -69,7 +69,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Apellido */}
+
           <label>
             APELLIDO
             <input
@@ -83,7 +83,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* RUT */}
+
           <label>
             RUT
             <input
@@ -97,7 +97,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Región */}
+
           <label>
             REGIÓN
             <select
@@ -110,11 +110,11 @@ const FormDePago = () => {
               <option value="">Región</option>
               <option value="Region 1">Región 1</option>
               <option value="Region 2">Región 2</option>
-              {/* Agregar más opciones de regiones */}
+
             </select>
           </label>
 
-          {/* Comuna */}
+
           <label>
             COMUNA
             <select
@@ -127,11 +127,11 @@ const FormDePago = () => {
               <option value="">Comuna</option>
               <option value="Comuna 1">Comuna 1</option>
               <option value="Comuna 2">Comuna 2</option>
-              {/* Agregar más opciones de comunas */}
+
             </select>
           </label>
 
-          {/* Localidad */}
+
           <label>
             LOCALIDAD
             <input
@@ -145,7 +145,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Calle */}
+
           <label>
             CALLE
             <input
@@ -159,7 +159,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Número */}
+
           <label>
             NÚMERO
             <input
@@ -173,7 +173,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Casa / Bloque / Departamento */}
+
           <label>
             CASA / BLOQUE / DEPARTAMENTO
             <input
@@ -186,7 +186,6 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Teléfono */}
           <label>
             NÚMERO DE TELÉFONO
             <input
@@ -200,7 +199,7 @@ const FormDePago = () => {
             />
           </label>
 
-          {/* Guardar dirección */}
+
           <label className="flex items-center">
             <input
               type="checkbox"
@@ -213,7 +212,7 @@ const FormDePago = () => {
           </label>
         </div>
 
-        {/* Botones de limpiar y siguiente */}
+
         <div className="flex justify-between mt-8">
           <button
             type="button"

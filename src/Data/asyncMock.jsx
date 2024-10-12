@@ -1,5 +1,3 @@
-// asyncMock.jsx
-
 const products = [
     {
         id: 1,

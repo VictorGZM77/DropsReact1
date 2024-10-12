@@ -1,13 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from '../../Data/asyncMock';  // Importamos el mock de datos
+import products from '../../Data/asyncMock';
 
 const ProductDetail = () => {
-  const { id } = useParams();  // Capturamos el id del producto desde la URL
-  const product = products.find((p) => p.id === parseInt(id));  // Buscamos el producto por id
+  const { id } = useParams();  
+  const product = products.find((p) => p.id === parseInt(id));  
 
   if (!product) {
-    return <p>Producto no encontrado</p>;  // En caso de que no se encuentre el producto
+    return <p>Producto no encontrado</p>;  
   }
 
   return (
