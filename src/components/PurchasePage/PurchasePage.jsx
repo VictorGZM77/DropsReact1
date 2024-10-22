@@ -6,7 +6,6 @@ const PurchasePage = ({ addToCart }) => {
   const { id } = useParams();  
   const product = products.find((p) => p.id === parseInt(id));  
 
-
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
 
@@ -14,13 +13,11 @@ const PurchasePage = ({ addToCart }) => {
     return <p>Producto no encontrado</p>;  
   }
 
-
   const handleAddToCart = () => {
     if (!selectedSize) {
       alert('Por favor selecciona una talla.');
       return;
     }
-
 
     addToCart({
       ...product,
@@ -34,11 +31,9 @@ const PurchasePage = ({ addToCart }) => {
   return (
     <div className="container mx-auto py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
         <div>
           <img src={product.image} alt={product.name} className="w-full h-auto" />
         </div>
-
 
         <div>
           <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
@@ -49,27 +44,17 @@ const PurchasePage = ({ addToCart }) => {
           <div className="mb-4">
             <h4 className="text-lg font-bold mb-2">Elige tu talla</h4>
             <div className="flex space-x-2">
-              <button
-                className={`border px-4 py-2 ${selectedSize === '7.5' ? 'bg-gray-700 text-white' : ''}`}
-                onClick={() => setSelectedSize('7.5')}
-              >
-                US 7.5 MEN
-              </button>
-              <button
-                className={`border px-4 py-2 ${selectedSize === '8' ? 'bg-gray-700 text-white' : ''}`}
-                onClick={() => setSelectedSize('8')}
-              >
-                US 8 MEN
-              </button>
-              <button
-                className={`border px-4 py-2 ${selectedSize === '8.5' ? 'bg-gray-700 text-white' : ''}`}
-                onClick={() => setSelectedSize('8.5')}
-              >
-                US 8.5 MEN
-              </button>
+              {product.size.map((size) => (
+                <button
+                  key={size}
+                  className={`border px-4 py-2 ${selectedSize === size ? 'bg-gray-700 text-white' : ''}`}
+                  onClick={() => setSelectedSize(size)}
+                >
+                  US {size} MEN
+                </button>
+              ))}
             </div>
           </div>
-
 
           <div className="mb-4">
             <h4 className="text-lg font-bold mb-2">Cantidad</h4>
@@ -81,7 +66,6 @@ const PurchasePage = ({ addToCart }) => {
               className="border px-4 py-2 w-20"
             />
           </div>
-
 
           <button
             onClick={handleAddToCart}
